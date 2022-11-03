@@ -17,14 +17,19 @@ public class WhiiteboardMarker : MonoBehaviour
     private WhiteBoard whiteboard; 
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
-    private Quaternion _lastTouchRot; 
+    private Quaternion _lastTouchRot;
+    private Color[] shiftingColor;
 
     // Start is called before the first frame update
     void Start()
     {
         _renderer = tip.GetComponent<Renderer>();
         color = Enumerable.Repeat(_renderer.material.color, penSize * penSize).ToArray();
-        _tipHieght = tip.localScale.y; 
+        shiftingColor = Enumerable.Repeat(_renderer.material.color, penSize * penSize).ToArray();
+        _tipHieght = tip.localScale.y;
+        StartCoroutine(ShiftColor());
+
+        print(shiftingColor.Length);
     }
 
     // Update is called once per frame
@@ -52,13 +57,13 @@ public class WhiiteboardMarker : MonoBehaviour
                 
                     if (_touchedLastFrame)
                     {
-                        whiteboard.texture.SetPixels(x, y, penSize, penSize, color);
+                        whiteboard.texture.SetPixels(x, y, penSize, penSize, shiftingColor);
 
                         for (float f = 0.01f; f < 1.00f; f += 0.01f)
                         {
                             var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                             var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
-                            whiteboard.texture.SetPixels(lerpX, lerpY, penSize, penSize, color);
+                            whiteboard.texture.SetPixels(lerpX, lerpY, penSize, penSize, shiftingColor);
                         }
 
                         transform.rotation = _lastTouchRot; 
@@ -76,5 +81,16 @@ public class WhiiteboardMarker : MonoBehaviour
         
         }
 
+    IEnumerator ShiftColor()
+    {
+        while (true)
+        {
+
+            _renderer.material.color = new Color(Mathf.Sin(Time.time * 2.5f), Mathf.Sin(Time.time * 1.5f), Mathf.Sin(Time.time * 2), 0);
+            shiftingColor = Enumerable.Repeat(_renderer.material.color, penSize * penSize).ToArray();
+            yield return new WaitForSeconds(0.1f);
+        }
     }
+
+}
 
