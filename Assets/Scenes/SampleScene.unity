@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 298618503}
   - component: {fileID: 298618504}
   m_Layer: 7
-  m_Name: RightHandControllerMirror
+  m_Name: MirrorController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2292,6 +2292,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RightHanded: 0
+  LeftHandRef: {fileID: 466868004}
+  RightHandRef: {fileID: 1705217279}
+  mirrorHand: {fileID: 0}
 --- !u!1 &1222197311
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,5 @@ public class FlippedHand : MonoBehaviour
     {
 
 
-        //print("OUR XROT: " + transform.rotation.x);
-        //print("OTHER XROT: " + OtherHand.transform.rotation.x);
     }
 }
