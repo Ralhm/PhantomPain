@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AnimalPart : MonoBehaviour
 {
 
@@ -10,54 +11,74 @@ public class AnimalPart : MonoBehaviour
         Legs, Torso, Head
     }
 
+    
+
     public BodyType Type;
     [Tooltip("Does the socket have an object attached to it?")]
-    public bool Attached; 
+    public bool Attached;
+    bool CanAttach;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SetAttached() 
     {
-        //Called on socket event, when bodypart enters socket range
-        print("ENTERED!");
+        print("SELECTED");
+        Attached = true;
 
-        
+
     }
 
     public void SetUnAttached()
     {
-        print("EXITED!");
+        print("UNSELECTED");
+        Attached = false;
 
     }
 
-    public void Selected()
+    public void SetSelected()
     {
-        print("SELECTED");
-        Attached = true;
+
     }
 
     public void UnSelected()
     {
-        print("UNSELECTED");
-        Attached = false;
+
     }
 
 
     public void OnTriggerEnter(Collider other)
     {
-        
+        //print("Touched a Collider!");
+        if (other.gameObject.layer == 9) //If we touch another animal part
+        {
+            if (Type == BodyType.Legs)
+            {
+                if (other.gameObject.GetComponent<AnimalPart>().Type != BodyType.Torso)
+                {
+                    print("Wrong body part!");
+                    CanAttach = false;
+                }
+                else
+                {
+                    print("Correct!");
+                    CanAttach = true;
+                }
+            }
+            else if (Type == BodyType.Torso)
+            {
+                if (other.gameObject.GetComponent<AnimalPart>().Type != BodyType.Head)
+                {
+                    print("Wrong body part!");
+                    CanAttach = false;
+                }
+                else
+                {
+                    print("Correct!");
+                    CanAttach = true;
+                }
+            }
+
+            
+        }
     }
 
 }
