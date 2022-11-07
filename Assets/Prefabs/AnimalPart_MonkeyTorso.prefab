@@ -62,6 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c033042f05f3444c96b56eef3c99edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plate: {fileID: 0}
+  socket: {fileID: 0}
   Type: 1
   Attached: 0
 --- !u!54 &-1768248385803710673
