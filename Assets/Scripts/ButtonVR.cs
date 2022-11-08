@@ -10,6 +10,7 @@ public class ButtonVR : MonoBehaviour
     public UnityEvent onRelease;
     GameObject presser;
     AudioSource sounds;
+    Vector3 self; 
     bool isPressed; 
 
 
@@ -24,7 +25,7 @@ public class ButtonVR : MonoBehaviour
     {
         if (!isPressed)
         {
-            button.transform.localPosition = new Vector3(0, 0.003f, 0);
+            button.transform.localPosition = new Vector3(self.x, (float)(self.y-15), self.z); 
             presser = other.gameObject;
             onPress.Invoke();
             sounds.Play();
@@ -36,7 +37,7 @@ public class ButtonVR : MonoBehaviour
     {
         if (other==presser)
         {
-            button.transform.localPosition = new Vector3(0, 0.015f, 0);
+            button.transform.localPosition = new Vector3(self.x, (float)(self.y + 15), self.z);
             onRelease.Invoke(); 
             isPressed = false;
         }
