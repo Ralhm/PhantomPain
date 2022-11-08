@@ -36,6 +36,7 @@ public class HandDecider : MonoBehaviour
         RightHanded = false;
         RightHandRef.gameObject.SetActive(false);
         mirrorHand.OtherHand = LeftHandRef;
+        mirrorHand.gameObject.transform.localScale = new Vector3(-1, 1, 1);
         //mirrorHand.transform.
 
     }
