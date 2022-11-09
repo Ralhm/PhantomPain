@@ -10,6 +10,7 @@ public class CopyBoards : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Board = GameObject.FindObjectOfType<WhiteBoard>().GetComponent<WhiteBoard>(); //I don't wanna have to drag the whiteboard ref into all of the copy boards
         Renderer rend = GetComponent<Renderer>();
         rend.material.mainTexture = Board.texture;
     }
