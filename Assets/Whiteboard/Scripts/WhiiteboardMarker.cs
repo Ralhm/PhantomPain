@@ -73,12 +73,12 @@ public class WhiiteboardMarker : MonoBehaviour
                     _lastTouchRot = transform.rotation;
                     _touchedLastFrame = true;
                     return; 
-                }
             }
+        }
             whiteboard = null;
             _touchedLastFrame = false; 
         
-        }
+    }
 
     IEnumerator ShiftColor()
     {

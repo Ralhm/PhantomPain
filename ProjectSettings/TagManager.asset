@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Whiteboard
+  - MirrorHand
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Torso
   - Head
   - Grab Ignore Ray
-  - 
-  - 
+  - PlayerMirror
+  - Marker
   - 
   - 
   - 

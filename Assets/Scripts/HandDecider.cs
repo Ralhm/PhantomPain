@@ -13,7 +13,8 @@ public class HandDecider : MonoBehaviour
     public GameObject LeftButtonRef;
     public GameObject nextButton;
     public GameObject backButton;
-    public FlippedHand mirrorHand;
+    public FlippedHand mirrorHandRight;
+    public FlippedHand mirrorHandLeft;
 
     void Awake()
     {
@@ -26,7 +27,8 @@ public class HandDecider : MonoBehaviour
         ActivateObjects();
         RightHanded = true;
         LeftHandRef.gameObject.SetActive(false);
-        mirrorHand.OtherHand = RightHandRef;
+        mirrorHandRight.OtherHand = RightHandRef;
+        mirrorHandRight.gameObject.SetActive(true);
 
     }
 
@@ -35,15 +37,16 @@ public class HandDecider : MonoBehaviour
         ActivateObjects();
         RightHanded = false;
         RightHandRef.gameObject.SetActive(false);
-        mirrorHand.OtherHand = LeftHandRef;
-        mirrorHand.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        mirrorHandLeft.OtherHand = LeftHandRef;
+        mirrorHandLeft.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        mirrorHandLeft.gameObject.SetActive(true);
         //mirrorHand.transform.
 
     }
 
     public void ActivateObjects()
     {
-        mirrorHand.gameObject.SetActive(true);
+        
         nextButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(true);
         LeftButtonRef.gameObject.SetActive(false);
