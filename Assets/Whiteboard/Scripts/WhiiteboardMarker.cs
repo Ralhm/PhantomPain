@@ -85,7 +85,7 @@ public class WhiiteboardMarker : MonoBehaviour
         while (true)
         {
 
-            _renderer.material.color = new Color(Mathf.Sin(Time.time * 2.5f), Mathf.Sin(Time.time * 1.5f), Mathf.Sin(Time.time * 2), 0);
+            _renderer.material.color = new Color(Mathf.Sin(Time.time * 2.5f), Mathf.Sin(Time.time * 1.5f), Mathf.Sin(Time.time * 2), 1);
             shiftingColor = Enumerable.Repeat(_renderer.material.color, penSize * penSize).ToArray(); //I have no idea how expensive this is but whatever, it looks cool
             yield return new WaitForSeconds(0.1f);
         }

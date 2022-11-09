@@ -989,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
@@ -1766,6 +1766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OtherHand: {fileID: 348435278}
+  InverseHand: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &887255929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,7 +1987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147377446}
   m_LocalRotation: {x: -0, y: -0.77295166, z: -0, w: 0.6344649}
-  m_LocalPosition: {x: -0.563, y: 0.06, z: 0.636}
+  m_LocalPosition: {x: -0.563, y: 1.327, z: 0.636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2656,7 +2657,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe080d2c0799a574b945840f28551728, type: 2}
+  - {fileID: 2100000, guid: bf9b6b566cf9e25448c3cd8da4b0bbe3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3133,7 +3134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe080d2c0799a574b945840f28551728, type: 2}
+  - {fileID: 2100000, guid: bf9b6b566cf9e25448c3cd8da4b0bbe3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
