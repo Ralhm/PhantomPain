@@ -6,13 +6,13 @@ public class Plate : MonoBehaviour
 {
     bool FullAnimal;
     public bool Rotating;
-    public int rotationSpeed;
+    public float rotationSpeed;
     public int animalParts = 0;
 
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Rotating)
         {

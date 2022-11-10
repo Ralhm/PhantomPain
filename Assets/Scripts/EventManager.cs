@@ -38,16 +38,16 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public IEnumerator TutorialEaseIn(float x) //let x represent the final position
+    public IEnumerator TutorialEaseIn(float y) //let x represent the final position
     {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 600; i++)
         {
 
             WhiteBoardSet.transform.position += new Vector3(0, -8 - WhiteBoardSet.transform.position.y, 0) * 0.05f;
 
-            TutorialSet.transform.position += new Vector3(x - TutorialSet.transform.position.x, 0, 0) * 0.1f;
+            TutorialSet.transform.position += new Vector3(0, y - TutorialSet.transform.position.y, 0) * 0.01f;
             yield return null;
-            if (TutorialSet.transform.position.x > x)
+            if (TutorialSet.transform.position.y < y)
             {
                 break;
             }
