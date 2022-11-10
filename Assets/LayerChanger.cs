@@ -10,7 +10,7 @@ public class LayerChanger : MonoBehaviour
     public bool stationary;
     public GameObject StaionaryObject;
     bool checker;
-    bool trigger; 
+    public bool trigger; 
     public AudioSource source; 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,32 @@ public class LayerChanger : MonoBehaviour
     {
         if (stationary)
         {
-            checker = StaionaryObject.layer == 13; 
+            checker = StaionaryObject.layer == 13;
+            if (trigger && checker)
+            {
+                if (ActivateObject != null)
+                {
+                    Debug.Log("Hit!");
+                    ActivateObject.layer = 6;
+                }
+                if (DeactivateObject != null)
+                {
+                    Debug.Log("Miss");
+                    DeactivateObject.layer = 13;
+                }
+            }
+            else if (trigger&&!checker){
+                if (ActivateObject != null)
+                {
+                    Debug.Log("LeaveHit");
+                    ActivateObject.layer = 13;
+                }
+                if (DeactivateObject != null)
+                {
+                    Debug.Log("LeaveMiss");
+                    DeactivateObject.layer = 6;
+                }
+            }
         }
 
         if (checker)
@@ -31,19 +56,7 @@ public class LayerChanger : MonoBehaviour
             
         }
 
-        if (trigger&&stationary&&checker)
-        {
-            if (ActivateObject != null)
-            {
-                Debug.Log("Hit!");
-                ActivateObject.layer = 6;
-            }
-            if (DeactivateObject != null)
-            {
-                Debug.Log("Miss");
-                DeactivateObject.layer = 13;
-            }
-        }
+       
        
 
 
