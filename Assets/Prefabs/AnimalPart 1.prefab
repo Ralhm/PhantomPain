@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8324662062106980939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.33795, z: 0}
-  m_LocalScale: {x: 0.18787657, y: 0.18787657, z: 0.18787657}
+  m_LocalScale: {x: 0.05004656, y: 0.05004656, z: 0.05004656}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8324662062110072807}
@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c033042f05f3444c96b56eef3c99edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plate: {fileID: 0}
+  socket: {fileID: 0}
   Type: 0
   Attached: 0
 --- !u!54 &-1768248385803710673
@@ -282,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8324662062110072806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.69, z: 0}
+  m_LocalPosition: {x: 0, y: 4.13, z: 0}
   m_LocalScale: {x: 0.9529219, y: 0.9529219, z: 0.9529219}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -354,5 +356,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.9484534
+  m_Center: {x: -0.003946317, y: 1.0472028, z: 0}

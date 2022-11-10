@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Whiteboard
+  - MirrorHand
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -16,12 +18,12 @@ TagManager:
   - Player
   - Socket
   - Animal
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Legs
+  - Torso
+  - Head
+  - Grab Ignore Ray
+  - PlayerMirror
+  - Marker
   - 
   - 
   - 

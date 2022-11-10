@@ -65,6 +65,6 @@ public class TextAdvance : MonoBehaviour
 
     public void SummonTutorial() //Event for moving onto the next play style
     {
-        EM.StartCoroutine(EM.TutorialEaseIn(-1.0f));
+        EM.StartCoroutine(EM.TutorialEaseIn(1.0f));
     }
 }
