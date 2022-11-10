@@ -18,7 +18,7 @@ public class Floater : MonoBehaviour
     void FixedUpdate()
     {
 
-        transform.position = pos + transform.forward * Mathf.Sin(Time.time * frequency) * magnitude;
+        transform.position = pos + Vector3.forward * Mathf.Sin(Time.time * frequency) * magnitude;
 
     }
 }

@@ -7,6 +7,7 @@ public class EventManager : MonoBehaviour
     public GameObject WhiteBoardSet;
     public GameObject AnimalSet;
     public GameObject TutorialSet;
+    public GameObject ActualTutorialObj;
     public Transform plateLocation; //Where the plate ends up when we move on from animal assembly
     public Plate plate;
 
@@ -14,7 +15,7 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ActualTutorialObj.gameObject.SetActive(false);
     }
 
 
@@ -40,6 +41,7 @@ public class EventManager : MonoBehaviour
 
     public IEnumerator TutorialEaseIn(float y) //let x represent the final position
     {
+        ActualTutorialObj.gameObject.SetActive(true);
         for (int i = 0; i < 100; i++)
         {
 
