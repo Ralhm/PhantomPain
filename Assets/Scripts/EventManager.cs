@@ -40,12 +40,12 @@ public class EventManager : MonoBehaviour
 
     public IEnumerator TutorialEaseIn(float y) //let x represent the final position
     {
-        for (int i = 0; i < 600; i++)
+        for (int i = 0; i < 100; i++)
         {
 
             WhiteBoardSet.transform.position += new Vector3(0, -8 - WhiteBoardSet.transform.position.y, 0) * 0.05f;
 
-            TutorialSet.transform.position += new Vector3(0, y - TutorialSet.transform.position.y, 0) * 0.01f;
+            TutorialSet.transform.position += new Vector3(0, y - TutorialSet.transform.position.y, 0) * 0.1f;
             yield return null;
             if (TutorialSet.transform.position.y < y)
             {
